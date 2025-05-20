@@ -2,7 +2,7 @@ package main;
 
 import java.sql.*;
 
-import GUI.SignUp;
+import GUI.Login;
 
 public class AppMain {
     public static Connection conn;
@@ -17,9 +17,9 @@ public class AppMain {
             Class.forName(DRIVER);
 
             conn = DriverManager.getConnection(DBURL, DBID, DBPW);
-            System.out.println("연결되었습니다.");
+            System.out.println("connected");
             
-            new SignUp();
+            new Login(); // 로그인 창부터 시작
 
         } catch (ClassNotFoundException e) {
             System.out.println("JDBC 드라이버를 찾을 수 없습니다.");
